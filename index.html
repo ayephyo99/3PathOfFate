@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>🔮 Pick 3 Fate Paths — Tarot Mini Game</title>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Starfield background -->
+  <canvas id="starfield"></canvas>
+
+  <main class="page">
+    <header class="hero">
+      <h1 class="fate-title">
+  <img src="images/girl.png" alt="Magic Orb" class="fate-icon">
+  Pick 3 Fate Paths
+</h1>
+
+
+      <!-- <h1>🔮 Pick 3 Fate Paths</h1> -->
+      <p class="subtitle">まずは誕生日と性別を入力してください — その後、Love / Career / Health を選択して運勢を占います。</p>
+    </header>
+
+    <!-- user form -->
+    <form id="userForm" class="card-form">
+      <label for="birthdate">誕生日 (Birthdate)</label>
+      <input type="text" id="birthdate" placeholder="例：2000/01/01"  required>
+
+      <label for="gender">性別 (Gender)</label>
+      <select id="gender" required>
+        <option value="">-- 選択 --</option>
+        <option value="男性">男性</option>
+        <option value="女性">女性</option>
+      </select>
+
+      <button type="submit" id="startBtn">カードを引く準備ができました。</button>
+    </form>
+
+    <!-- Fate selection -->
+    <section id="fateSection" class="fate-section hidden">
+      <h2 class="fate-title">Choose Your Fate Path</h2>
+      <div class="fate-paths">
+        <div class="tarot-card fate-card" data-path="Love">
+          <div class="front"><img src="images/cover.jpg" alt="cover"></div>
+          <div class="back"></div>
+          <div class="label">Love ❤️</div>
+        </div>
+
+        <div class="tarot-card fate-card" data-path="Career">
+          <div class="front"><img src="images/cover.jpg" alt="cover"></div>
+          <div class="back"></div>
+          <div class="label">Career 💼</div>
+        </div>
+
+        <div class="tarot-card fate-card" data-path="Health">
+          <div class="front"><img src="images/cover.jpg" alt="cover"></div>
+          <div class="back"></div>
+          <div class="label">Health 🌿</div>
+        </div>
+      </div>
+
+      <p class="hint">カードをクリックして、各道の運勢を見てください。3つすべて終わると最終運命が表示されます。</p>
+    </section>
+  </main>
+
+  <!-- data + logic -->
+  <script src="tarotCards.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

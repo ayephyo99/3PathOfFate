@@ -1,0 +1,155 @@
+/* ---------- Base / layout ---------- */
+:root{
+  --bg1: #110019;
+  --bg2: #04000a;
+  --accent: #ff00cc;
+  --accent2: #00e5ff;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;padding:0;font-family:Inter, "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+body{
+  background: radial-gradient(circle at 20% 10%, #1a0033 0%, #050010 40%, #000 100%);
+  color:#fff;
+  overflow-x:hidden;
+  transition: background 1.2s ease, box-shadow 1.2s ease;
+}
+
+/* Header */
+.page{padding:40px 18px 120px;max-width:1100px;margin:0 auto;text-align:center}
+.hero h1{font-size:2.2rem; margin: 6px 0 8px; letter-spacing:1px; text-shadow:0 0 14px rgba(255,0,204,0.15)}
+.subtitle{opacity:0.9;color:rgba(255,255,255,0.85);margin-bottom:18px;font-weight: bold;}
+
+/* Form (simple, centered) */
+.card-form{
+  width:350px; max-width:92%; margin:12px auto 30px; padding:18px; border-radius:14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+}
+.card-form label{display:block; text-align:left; font-weight:600; margin-top:8px; font-size:0.95rem;}
+.card-form input, .card-form select{
+  width:100%; padding:10px 12px; border-radius:10px; margin-top:8px; border:1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02); color:#9f833a; outline:none;
+}
+
+input::placeholder{
+   background: rgba(255,255,255,0.02); color:#9f833a; outline:none;
+
+}
+
+
+.card-form button{
+  width:100%; margin-top:14px; padding:12px; border-radius:12px; border:none;
+  background: linear-gradient(90deg,var(--accent), #ff9900);
+  color:#fff; font-weight:700; cursor:pointer; font-size:1rem;
+  box-shadow: 0 10px 30px rgba(255,0,204,0.12);
+}
+
+/* Fate selection section */
+.fate-section{margin-top:32px}
+.fate-title{font-size:1.8rem; margin-bottom:22px; text-shadow:0 0 18px rgba(255,0,204,0.09)}
+.fate-paths{display:flex;justify-content:center;gap:36px;align-items:flex-end;flex-wrap:wrap}
+
+/* Tarot card visuals */
+.tarot-card{
+  width:180px; height:260px; perspective:1200px; cursor:pointer; position:relative;
+  border-radius:16px; display:inline-block;
+  transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s;
+  transform-origin:center bottom;
+}
+.tarot-card .front, .tarot-card .back{
+  position:absolute; inset:0; border-radius:16px; backface-visibility:hidden;
+  overflow:hidden;
+}
+.tarot-card .front img{width:100%;height:100%;object-fit:cover;display:block;border-radius:16px}
+.tarot-card .back{transform: rotateY(180deg); background-size:cover; background-position:center; box-shadow: inset 0 0 40px rgba(0,0,0,0.4);}
+
+/* flip states */
+.tarot-card .front { transform: rotateY(0deg); }
+.tarot-card.flipped .front { transform: rotateY(-180deg); transition: transform .9s; }
+.tarot-card.flipped .back  { transform: rotateY(0deg); transition: transform .9s; }
+
+/* labels and hover */
+.tarot-card .label{
+  position:absolute; bottom:-22px; left:50%; transform:translateX(-50%); font-weight:700; color:#fff;
+  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); padding:8px 12px; border-radius:12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+/* hovered look */
+.tarot-card:hover{ transform: translateY(-8px) scale(1.03); box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
+
+/* small hint text */
+.hint{opacity:0.9;margin-top:18px;color:rgba(255,255,255,0.85)}
+
+/* hidden helper */
+.hidden{display:none}
+
+/* progress bar styles (animated gradient) */
+.progress-container{ width:80%; max-width:420px; height:18px; border-radius:12px; background: rgba(255,255,255,0.12); margin:12px auto; overflow:hidden; }
+.progress-bar{ height:100%; width:0%; border-radius:12px; transition: width 1.2s ease; background: linear-gradient(270deg, #ff00cc, #ffcc00, #00ffff, #ff00cc); background-size: 400% 100%; animation: gradientFlow 6s linear infinite; }
+@keyframes gradientFlow{ 0%{ background-position:0% 50% } 50%{ background-position:100% 50% } 100%{ background-position:0% 50% } }
+
+/* SweetAlert popup base glow */
+.swal2-popup{ border-radius:14px; overflow:hidden; position:relative; }
+
+/* popup ripple layer style (JS will append element) */
+.ripple-layer{
+  position:absolute; top:50%; left:50%; width:250%; height:250%; transform:translate(-50%,-50%); border-radius:50%;
+  opacity:0.35; filter: blur(22px); pointer-events:none; z-index:0;
+}
+
+/* final fate grand aura styles appended by JS use class final-fate-popup on Swal.getPopup() if desired */
+.fate-popup::before{ content:""; position:absolute; inset:0; border-radius:12px; z-index:-1; background: radial-gradient(circle, rgba(255,0,204,0.12), transparent 60%); animation:auraGlow 2s ease-in-out infinite alternate; }
+@keyframes auraGlow{ from{transform:scale(1);opacity:0.6} to{transform:scale(1.03);opacity:1} }
+
+/* big final popup custom - rotate conic aura applied to appended element */
+.final-aura {
+  position:absolute; inset:-40px; z-index:-2; border-radius:20px; filter:blur(60px);
+  background: conic-gradient(from 0deg, #ff00cc, #00e5ff, #8eff66, #ff00cc);
+  animation: spinAura 6s linear infinite;
+}
+@keyframes spinAura { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+
+/* starfield canvas behind everything */
+#starfield{ position:fixed; top:0; left:0; width:100%; height:100%; z-index:-3; display:block; pointer-events:none; }
+
+/* Element aura quick helpers (body classes toggled by JS) */
+body.fire{ box-shadow: inset 0 0 200px rgba(255,50,0,0.08); }
+body.water{ box-shadow: inset 0 0 200px rgba(0,120,255,0.06); }
+body.earth{ box-shadow: inset 0 0 200px rgba(0,200,100,0.06); }
+body.air{ box-shadow: inset 0 0 200px rgba(255,255,255,0.06); }
+
+/* responsive */
+@media (max-width:700px){
+  .fate-paths{gap:18px}
+  .tarot-card{width:150px;height:220px}
+}
+
+
+/*girlicon*/
+.fate-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: "Poppins", "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(255, 180, 255, 0.7);
+}
+
+.fate-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+  0% { filter: drop-shadow(0 0 4px #ffb6ff) drop-shadow(0 0 8px #c08aff); }
+  50% { filter: drop-shadow(0 0 12px #ffc6ff) drop-shadow(0 0 20px #b68fff); }
+  100% { filter: drop-shadow(0 0 4px #ffb6ff) drop-shadow(0 0 8px #c08aff); }
+}

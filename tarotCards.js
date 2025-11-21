@@ -1,0 +1,75 @@
+// tarotCards.js — Full 78 Tarot Cards (Love / Career / Health categories)
+
+const tarotCards = [
+  // ---- Major Arcana (22) ----
+  { id:"TheFool", name:"TheFool", category:"Career", element:"Air", mood:"neutral", message:"🃏 新しい冒険が始まります。\n未知を恐れず、一歩を踏み出しましょう。\n信じる心があなたを導きます。" },
+  { id:"TheMagician", name:"TheMagician", category:"Career", element:"Fire", mood:"positive", message:"✨ あなたの中にすべての力があります。\n自信を持って行動を始めてください。\n思い描く未来は、現実になります。" },
+  { id:"TheHighPriestess", name:"TheHighPriestess", category:"Health", element:"Water", mood:"neutral", message:"🔮 静かな心が答えを教えてくれます。\n直感を信じ、バランスを大切にしましょう。" },
+  { id:"TheEmpress", name:"TheEmpress", category:"Love", element:"Earth", mood:"positive", message:"🌸 愛と豊かさに満たされる時。\n感情を大切にし、優しさを分け与えてください。" },
+  { id:"TheEmperor", name:"TheEmperor", category:"Health", element:"Earth", mood:"positive", message:"🛡 安定と秩序があなたを支えます。\n健康のルールを守り、自分を信じて進みましょう。" },
+  { id:"TheHierophant", name:"TheHierophant", category:"Career", element:"Earth", mood:"neutral", message:"📜 経験から学びましょう。\n伝統や知識を尊重することで道が開けます。" },
+  { id:"TheLovers", name:"TheLovers", category:"Love", element:"Air", mood:"positive", message:"💞 心が通じ合う瞬間。\n絆が深まり、愛の選択が訪れます。" },
+  { id:"TheChariot", name:"TheChariot", category:"Career", element:"Fire", mood:"positive", message:"🏁 意志と集中力が勝利を呼びます。\n前を向いて突き進みましょう！" },
+  { id:"Strength", name:"Strength", category:"Health", element:"Fire", mood:"positive", message:"🦁 穏やかな強さが鍵です。\n内なる勇気を信じて、心身を整えましょう。" },
+  { id:"TheHermit", name:"TheHermit", category:"Health", element:"Earth", mood:"neutral", message:"🕯 静かな時間の中に答えがあります。\n自分を見つめ直し、癒しを見つけてください。" },
+  { id:"WheelOfFortune", name:"WheelOfFortune", category:"Career", element:"Fire", mood:"neutral", message:"🎡 運命の歯車が回り始めます。\nチャンスを逃さず、流れに乗ってください。" },
+  { id:"Justice", name:"Justice", category:"Love", element:"Air", mood:"positive", message:"⚖️ 真実と誠実さがあなたを守ります。\n冷静な判断が愛を育てます。" },
+  { id:"TheHangedMan", name:"TheHangedMan", category:"Health", element:"Water", mood:"neutral", message:"🌀 今は休息と視点の転換の時。\n焦らず、心を解放してください。" },
+  { id:"Death", name:"Death", category:"Career", element:"Water", mood:"negative", message:"💀 終わりが新しい始まりを生みます。\n変化を恐れず、再スタートを切りましょう。" },
+  { id:"Temperance", name:"Temperance", category:"Health", element:"Water", mood:"neutral", message:"🌈 バランスが整う時です。\n穏やかに自分を癒しましょう。" },
+  { id:"TheDevil", name:"TheDevil", category:"Career", element:"Earth", mood:"negative", message:"😈 執着や誘惑に注意。\n自由になる勇気を持ちましょう。" },
+  { id:"TheTower", name:"TheTower", category:"Career", element:"Air", mood:"negative", message:"⚡ 予期せぬ変化が起こるかもしれません。\n壊れることで新しい可能性が生まれます。" },
+  { id:"TheStar", name:"TheStar", category:"Love", element:"Water", mood:"positive", message:"⭐ 希望と癒しの光があなたを包みます。\n過去を手放し、新しい愛を迎えましょう。" },
+  { id:"TheMoon", name:"TheMoon", category:"Love", element:"Water", mood:"neutral", message:"🌙 直感が導く道を信じてください。\n不安の中にも真実があります。" },
+  { id:"TheSun", name:"TheSun", category:"Love", element:"Fire", mood:"positive", message:"🌞 喜びと成功の時。\n愛が明るく輝き、周りを照らします。" },
+  { id:"Judgement", name:"Judgement", category:"Career", element:"Air", mood:"positive", message:"🔔 過去からの学びを生かしましょう。\n再生と成長のチャンスです。" },
+  { id:"TheWorld", name:"TheWorld", category:"Career", element:"Fire", mood:"positive", message:"🌍 成功と完成の時。\n努力が実を結び、新しい旅が始まります。" },
+
+  // ---- Minor Arcana: Wands (Career / Fire) ----
+  { id:"AceOfWands", name:"AceOfWands", category:"Career", element:"Fire", message:"🔥 新しい情熱が生まれます。\nアイデアを形にするチャンスです。" },
+  { id:"TwoOfWands", name:"TwoOfWands", category:"Career", element:"Fire", message:"🗺 計画と展望を描く時。\n目標に向かって動き出しましょう。" },
+  { id:"ThreeOfWands", name:"ThreeOfWands", category:"Career", element:"Fire", message:"🚢 未来が見え始めています。\n自信を持って進んでください。" },
+  { id:"FourOfWands", name:"FourOfWands", category:"Career", element:"Fire", message:"🏡 成果を祝う時です。\n仲間と喜びを分かち合いましょう。" },
+  { id:"FiveOfWands", name:"FiveOfWands", category:"Career", element:"Fire", message:"⚔ 小さな競争が成長を促します。\n自分を信じて挑戦を続けて。" },
+  { id:"SixOfWands", name:"SixOfWands", category:"Career", element:"Fire", message:"🏆 勝利と認められる瞬間。\n努力が報われます。" },
+  { id:"SevenOfWands", name:"SevenOfWands", category:"Career", element:"Fire", message:"🛡 信念を貫く時。\n困難に負けないでください。" },
+  { id:"EightOfWands", name:"EightOfWands", category:"Career", element:"Fire", message:"💨 チャンスが一気にやってきます。\n素早い行動が成功を呼びます。" },
+  { id:"NineOfWands", name:"NineOfWands", category:"Career", element:"Fire", message:"🧱 もう少しでゴールです。\n諦めず、最後まで耐えましょう。" },
+  { id:"TenOfWands", name:"TenOfWands", category:"Career", element:"Fire", message:"💼 責任が重い時。\n助けを求める勇気を持ちましょう。" },
+
+  // ---- Cups (Love / Water) ----
+  { id:"AceOfCups", name:"AceOfCups", category:"Love", element:"Water", message:"💧 新しい愛の始まり。\n心を開いて感情を大切にしましょう。" },
+  { id:"TwoOfCups", name:"TwoOfCups", category:"Love", element:"Water", message:"💞 絆と調和の時。\n心が一つになる関係です。" },
+  { id:"ThreeOfCups", name:"ThreeOfCups", category:"Love", element:"Water", message:"🎉 喜びと友情に包まれます。\n共に笑い合う時間を大切に。" },
+  { id:"FourOfCups", name:"FourOfCups", category:"Love", element:"Water", message:"🌧 退屈を感じたら新しい視点を。\n心を開けば愛が見つかります。" },
+  { id:"FiveOfCups", name:"FiveOfCups", category:"Love", element:"Water", message:"💔 失ったものより残された愛に目を向けて。\n癒しの時です。" },
+  { id:"SixOfCups", name:"SixOfCups", category:"Love", element:"Water", message:"🧸 懐かしい再会や思い出が心を温めます。\n純粋な愛を思い出しましょう。" },
+  { id:"SevenOfCups", name:"SevenOfCups", category:"Love", element:"Water", message:"🌈 幻想に惑わされないで。\n本当に大切な愛を選びましょう。" },
+  { id:"EightOfCups", name:"EightOfCups", category:"Love", element:"Water", message:"🚶‍♀️ 過去を手放す勇気を。\n新しい愛に向かって進みましょう。" },
+  { id:"NineOfCups", name:"NineOfCups", category:"Love", element:"Water", message:"🥂 願いが叶う時。\n幸せと満足を感じましょう。" },
+  { id:"TenOfCups", name:"TenOfCups", category:"Love", element:"Water", message:"🌈 家族や愛が調和する時。\n心からの幸福が訪れます。" },
+
+  // ---- Swords (Health / Air) ----
+  { id:"AceOfSwords", name:"AceOfSwords", category:"Health", element:"Air", message:"⚔ 明確な思考と決断の時。\n迷いを断ち切りましょう。" },
+  { id:"TwoOfSwords", name:"TwoOfSwords", category:"Health", element:"Air", message:"⚖️ バランスを保ちましょう。\n心の声を聞いて判断を。" },
+  { id:"ThreeOfSwords", name:"ThreeOfSwords", category:"Health", element:"Air", message:"💧 心の痛みが癒える時です。\n涙は浄化のサインです。" },
+  { id:"FourOfSwords", name:"FourOfSwords", category:"Health", element:"Air", message:"🛏 休息が必要です。\n静かな時間でエネルギーを整えて。" },
+  { id:"FiveOfSwords", name:"FiveOfSwords", category:"Health", element:"Air", message:"🌀 無理をしないで。\n心と体の限界を尊重しましょう。" },
+  { id:"SixOfSwords", name:"SixOfSwords", category:"Health", element:"Air", message:"🚤 穏やかさが戻ります。\n癒しへの旅が始まります。" },
+  { id:"SevenOfSwords", name:"SevenOfSwords", category:"Health", element:"Air", message:"🤫 自分を大切に守りましょう。\n無理な我慢は禁物です。" },
+  { id:"EightOfSwords", name:"EightOfSwords", category:"Health", element:"Air", message:"⛓ 束縛から抜け出す時です。\n自由に呼吸しましょう。" },
+  { id:"NineOfSwords", name:"NineOfSwords", category:"Health", element:"Air", message:"😢 不安を抱えすぎないで。\n心を休ませる勇気を持ちましょう。" },
+  { id:"TenOfSwords", name:"TenOfSwords", category:"Health", element:"Air", message:"🌅 苦しみは終わりを迎えます。\n再生の夜明けが訪れます。" },
+
+  // ---- Pentacles (Career / Earth) ----
+  { id:"AceOfPentacles", name:"AceOfPentacles", category:"Career", element:"Earth", message:"💰 新しいチャンスが訪れます。\n実りあるスタートを切りましょう。" },
+  { id:"TwoOfPentacles", name:"TwoOfPentacles", category:"Career", element:"Earth", message:"⚖️ バランスを取ることが鍵です。\n柔軟に対応して成功を掴みましょう。" },
+  { id:"ThreeOfPentacles", name:"ThreeOfPentacles", category:"Career", element:"Earth", message:"👷‍♂️ 協力とチームワークが成功を生みます。" },
+  { id:"FourOfPentacles", name:"FourOfPentacles", category:"Career", element:"Earth", message:"🏦 固執しすぎないように。\n新しい流れを受け入れましょう。" },
+  { id:"FiveOfPentacles", name:"FiveOfPentacles", category:"Career", element:"Earth", message:"🌨 不安定さを感じる時。\n信頼できる人に助けを求めて。" },
+  { id:"SixOfPentacles", name:"SixOfPentacles", category:"Career", element:"Earth", message:"🎁 与えることで受け取る時。\nバランスの取れた助け合いを。" },
+  { id:"SevenOfPentacles", name:"SevenOfPentacles", category:"Career", element:"Earth", message:"🌱 努力が少しずつ実ります。\n焦らず続けましょう。" },
+  { id:"EightOfPentacles", name:"EightOfPentacles", category:"Career", element:"Earth", message:"🛠 技術を磨く時です。\n集中が成果を生みます。" },
+  { id:"NineOfPentacles", name:"NineOfPentacles", category:"Career", element:"Earth", message:"🏡 自立と成功の時。\n努力の結果を楽しみましょう。" },
+  { id:"TenOfPentacles", name:"TenOfPentacles", category:"Career", element:"Earth", message:"💎 豊かさと安定が訪れます。\n家族や仲間と共に喜びを分かち合って。" }
+];
