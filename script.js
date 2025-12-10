@@ -48,7 +48,7 @@ makeStars();
 drawStars();
 
 
-// ---------- Core Game Logic ----------
+// ---------- my Logic ----------
 const form = document.getElementById("userForm");
 const fateSection = document.getElementById("fateSection");
 const fateCardsEls = document.querySelectorAll(".fate-card");
@@ -64,12 +64,7 @@ function parseBirthdate(raw){
   if(!raw || typeof raw !== "string") return null;
   raw = raw.trim();
 
-   // 1) YYYY-MM-DD
-  // const isoDash = /^(\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
-   // 2) YYYY/MM/DD
-  // const yyyySlash = /^(\d{4})\/(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])$/;
-   // 3) MM/DD/YYYY
-  // const mmddSlash = /^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/(\d{4})$/;
+
 
   // 1) YYYY-MM-DD
   const isoDash = /^(\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
@@ -85,21 +80,7 @@ function parseBirthdate(raw){
 
 
 
-  // let year, month, day;
-  // if(isoDash.test(raw)){
-  //   const m = raw.match(isoDash);
-  //   year = m[1]; month = m[2]; day = m[3];
-  // } else if(yyyySlash.test(raw)){
-  //   const m = raw.match(yyyySlash);
-  //   year = m[1]; month = m[2]; day = m[3];
-  // } else if(mmddSlash.test(raw)){
-  //   const m = raw.match(mmddSlash);
-  //   year = m[3]; month = m[1]; day = m[2];
-  // } else {
-  //   return null;
-  // }
-
-
+  
 
 
 let year, month, day, m;
